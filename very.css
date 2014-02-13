@@ -1,0 +1,185 @@
+body {
+background-color:#ffffcc;
+background-repeat: no-repeat;
+background-position:center center;
+background-attachment:fixed; 
+-webkit-background-size:cover;
+-moz-background-size:cover;
+-o-background-size:cover;
+background-size:cover;
+font-family:Comic Sans MS,Comic Sans,Chalkboard,Helvetica,Arial,sans-serif;
+min-height:640px;
+text-transform:lowercase;
+}
+
+.main {
+height:640px;
+left:50%;
+margin-left:-275px;
+margin-top:-320px;
+position:absolute;
+top:50%;
+width:550px;
+}
+
+.doge {
+background-position:50% 50%;
+background-repeat:no-repeat;
+background-size:550px 550px!important;
+height:550px;
+width:550px;
+}
+
+.weather {
+height:90px;
+position:relative;
+top:-100px;
+text-align:center;
+}
+
+.description {
+font-size:30px;
+color:#33d6ff;
+}
+
+.location {
+color:#ff3399;
+}
+
+.celcius,
+.fahrenheit {
+color:#30ffd6;
+display:inline-block;
+}
+
+.suchlikes {
+display:block;
+padding:10px;
+}
+
+.much-like {
+display:inline-block;
+padding:5px;
+}
+
+.ourinfo {
+display:block;
+position:absolute;
+bottom:0;
+right:0;
+padding:0 10px 10px 0;
+color:#ffffe6;
+font-weight:100px;
+font-size:10px;
+letter-spacing:1px;
+text-align:right;
+}
+
+.ourinfo p {
+margin:0;
+padding:0;
+}
+
+.ourinfo a {
+text-decoration:none;
+color:#ffff99;
+font-weight:700;
+}
+
+.ourinfo a:hover {
+color:#ff3399;
+}
+
+.geo {
+background:url(/img/doge-geo.png) 0px 5px no-repeat rgba(0,0,0,0.2);
+background-size:38px 38px;
+color:#ffff75;
+cursor:pointer;
+font-size:15px;
+margin:0;
+padding:14px 14px 14px 42px;
+position:absolute;
+right:0px;
+top:0px;
+text-align:right;
+width:auto;
+z-index:9999;
+}
+
+.geo:hover {
+color:#ff5cff;
+}
+
+.overlay {
+bottom:0;
+left:0;
+pointer-events:none;
+position:fixed;
+right:0;
+top:0;
+z-index:999;
+}
+
+/** such sky background image css. many classes. wow **/
+.dw00e {background-image:url(/img/sky-img/doge-regular.png);}
+.dw01d {background-image:url(/img/sky-img/01d.png);}
+.dw01n {background-image:url(/img/sky-img/01n.png);}
+.dw02d {background-image:url(/img/sky-img/02d.png);}
+.dw02n {background-image:url(/img/sky-img/02n.png);}
+.dw03d {background-image:url(/img/sky-img/03d.png);}
+.dw03n {background-image:url(/img/sky-img/03n.png);}
+.dw04d {background-image:url(/img/sky-img/04d.png);}
+.dw04n {background-image:url(/img/sky-img/04n.png);}
+.dw09d {background-image:url(/img/sky-img/09d.png);}
+.dw09n {background-image:url(/img/sky-img/09n.png);}
+.dw10d {background-image:url(/img/sky-img/10d.png);}
+.dw10n {background-image:url(/img/sky-img/10n.png);}
+.dw11d {background-image:url(/img/sky-img/11d.png);}
+.dw11n {background-image:url(/img/sky-img/11n.png);}
+.dw13d {background-image:url(/img/sky-img/13d.png);}
+.dw13n {background-image:url(/img/sky-img/13n.png);}
+.dw50d {background-image:url(/img/sky-img/50d.png);}
+.dw50n {background-image:url(/img/sky-img/50n.png);}
+
+/** so doge background image. many classes. wow **/
+.dw00e .doge {background-image:url(/img/doge/doge-regular.png);}
+.dw01d .doge {background-image:url(/img/doge/01d.png);}
+.dw01n .doge {background-image:url(/img/doge/01n.png);}
+.dw02d .doge {background-image:url(/img/doge/02d.png);}
+.dw02n .doge {background-image:url(/img/doge/02n.png);}
+.dw03d .doge {background-image:url(/img/doge/03d.png);}
+.dw03n .doge {background-image:url(/img/doge/03n.png);}
+.dw04d .doge {background-image:url(/img/doge/04d.png);}
+.dw04n .doge {background-image:url(/img/doge/04n.png);}
+.dw09d .doge {background-image:url(/img/doge/09d.png);}
+.dw09n .doge {background-image:url(/img/doge/09n.png);}
+.dw10d .doge {background-image:url(/img/doge/10d.png);}
+.dw10n .doge {background-image:url(/img/doge/10n.png);}
+.dw11d .doge {background-image:url(/img/doge/11d.png);}
+.dw11n .doge {background-image:url(/img/doge/11n.png);}
+.dw13d .doge {background-image:url(/img/doge/13d.png);}
+.dw13n .doge {background-image:url(/img/doge/13n.png);}
+.dw50d .doge {background-image:url(/img/doge/50d.png);}
+.dw50n .doge {background-image:url(/img/doge/50n.png);}
+
+/** many colours. such wow **/
+.c01 {color:#0066ff;}
+.c02 {color:#ff3399;}
+.c03 {color:#33cc33;}
+.c04 {color:#ffff99;}
+.c05 {color:#ffff75;}
+.c06 {color:#8533ff;}
+.c07 {color:#33d6ff;}
+.c08 {color:#ff5cff;}
+.c09 {color:#19d1a3;}
+.c10 {color:#ff4719;}
+.c11 {color:#197519;}
+.c12 {color:#6699ff;}
+.c13 {color:#4747d1;}
+.c14 {color:#d1d1e0;}
+.c15 {color:#ff5050;}
+.c16 {color:#fffff0;}
+.c17 {color:#cc99ff;}
+.c18 {color:#66e0c2;}
+.c19 {color:#ff4dff;}
+.c20 {color:#00ccff;}
