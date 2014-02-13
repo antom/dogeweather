@@ -56,7 +56,9 @@ $('.geo').bind('click', function(e) {
         $('.celsius').text(Math.round(doge.temperature.c) + '°C');
         $('.fahrenheit').text(Math.round(doge.temperature.f) + '°F');
         
-        body.append('<div class="such overlay" />').children('.such.overlay');
+        if (!$('.such.overlay').length) {
+            body.append('<div class="such overlay" />');
+        }
      
         window.doge_interval = setInterval(function() {
             var l  = 5 + Math.round(Math.random() * 90) + '%',
