@@ -11,9 +11,7 @@
         <link rel="stylesheet" type="text/css" href="/very.css" />
     </head>
     <body class="dw{weather->id}">
-        <p class="geo">
-            very location
-        </p>
+        <p class="geo">very location</p>
 
         <div class="main">
             <div class="doge"></div>
@@ -21,7 +19,7 @@
             <div class="weather">
                 <div class="description">wow {weather->description}</div>
                 <div class="location">{weather->location}</div>
-                <div class="celcius">{rounded_temperature->c}&#176;C</div> 
+                <div class="celsius">{rounded_temperature->c}&#176;C</div> 
                 <div class="fahrenheit">{rounded_temperature->f}&#176;F</div>
             </div>
         </div>

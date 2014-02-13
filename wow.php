@@ -75,13 +75,13 @@ function get_weather($decode = 1) {
   return call_api('http://api.openweathermap.org/data/2.5/weather?' . $api_query,$decode);
 }
 
-// much return array. very listing of tings. so based on celcius.
-function get_temperature_tings($celcius) {
-  $celcius = round($celcius);
+// much return array. very listing of tings. so based on celsius.
+function get_temperature_tings($celsius) {
+  $celsius = round($celsius);
 
   // much switch. so array.
   switch(true) {
-    case ($celcius <= -30):
+    case ($celsius <= -30):
       return array(
         'winter',
         'freeze',
@@ -92,7 +92,7 @@ function get_temperature_tings($celcius) {
         'doom',
       );
 
-    case ($celcius > -30 && $celcius <= -15):
+    case ($celsius > -30 && $celsius <= -15):
       return array(
         'cold',
         'freeze',
@@ -103,7 +103,7 @@ function get_temperature_tings($celcius) {
         'popsicle',
       );
 
-    case ($celcius > -15 && $celcius <= -7):
+    case ($celsius > -15 && $celsius <= -7):
       return array(
         'icy',
         'winter',
@@ -114,7 +114,7 @@ function get_temperature_tings($celcius) {
         'not okay',
       );
 
-    case ($celcius > -7 && $celcius <= 0):
+    case ($celsius > -7 && $celsius <= 0):
       return array(
         'icy',
         'frost',
@@ -125,7 +125,7 @@ function get_temperature_tings($celcius) {
         'below freezing point',
       );
 
-    case ($celcius > 0 && $celcius <= 10):
+    case ($celsius > 0 && $celsius <= 10):
       return array(
         'chilly',
         'concern',
@@ -136,7 +136,7 @@ function get_temperature_tings($celcius) {
         'almost freezing',
       );
 
-    case ($celcius > 10 && $celcius <= 20):
+    case ($celsius > 10 && $celsius <= 20):
       return array(
         'moderate',
         'mild',
@@ -147,7 +147,7 @@ function get_temperature_tings($celcius) {
         'brisk',
       );
 
-    case ($celcius > 20 && $celcius <= 30):
+    case ($celsius > 20 && $celsius <= 30):
       return array(
         'heat',
         'warmth',
@@ -158,7 +158,7 @@ function get_temperature_tings($celcius) {
         'ambient',
       );
 
-    case ($celcius > 30):
+    case ($celsius > 30):
       return array(
         'boiling',
         'bake',
@@ -176,7 +176,7 @@ function get_temperature_tings($celcius) {
         'degrees',
         'shrug',
         'wow',
-        'celcius',
+        'celsius',
         'farenheit',
       );
   }
@@ -369,18 +369,18 @@ function endoge_get_weather($tings = array(),$decode = 1) {
   $weather = get_weather(1);
 
   if ($weather) {
-    $celcius = $weather->main->temp - 273.15;
+    $celsius = $weather->main->temp - 273.15;
 
     $endoged_weather = array(
       'id'          => $weather->weather[0]->icon,
       'location'    => $weather->name,
       'description' => $weather->weather[0]->description,
       'temperature' => (object)array(
-        'c' => $celcius,
-        'f' => $celcius * 9 / 5 + 32,
+        'c' => $celsius,
+        'f' => $celsius * 9 / 5 + 32,
       ),
       'tings'       => array_merge(
-          get_temperature_tings($celcius),
+          get_temperature_tings($celsius),
           get_icon_tings($weather->weather[0]->icon),
           $tings
       ),
@@ -391,11 +391,11 @@ function endoge_get_weather($tings = array(),$decode = 1) {
       'location'    => 'Nowhere',
       'description' => 'Nothing',
       'temperature' => (object)array(
-        'c' => $celcius,
-        'f' => $celcius * 9 / 5 + 32,
+        'c' => $celsius,
+        'f' => $celsius * 9 / 5 + 32,
       ),
       'tings'       => array_merge(
-          get_temperature_tings($celcius),
+          get_temperature_tings($celsius),
           get_icon_tings($weather->weather[0]->icon),
           $tings
       ),

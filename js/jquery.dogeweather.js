@@ -6,16 +6,17 @@ $('.geo').bind('click', function(e) {
         clearInterval(window.doge_interval);
         delete window.doge_interval;
         $('.such span').remove();
-    } else {
+    } else if (btn.text() == 'very location') {
         if (navigator.geolocation) {
+            btn.text('so finding…');
             navigator.geolocation.getCurrentPosition(function(position) {
                 $.getJSON('./?json&lat=' + position.coords.latitude + '&lon=' + position.coords.longitude,function(data) {
                     $($.doge(data));
+                    btn.text('wow, located!').addClass('c08');
                 }); 
-                btn.text('wow, located!').addClass('c08');
             });
         } else {
-            btn.text('Geolocation is not supported by this browser.');
+            btn.text('so unsupported. much sadness.');
         }
     }
 
@@ -42,7 +43,7 @@ $('.geo').bind('click', function(e) {
                 if (!arr) arr = doge.tings;
                 return arr[Math.floor(Math.random() * arr.length)];
             },
-            suchtemp = parseInt(doge.temperature.celcius,10),
+            suchtemp = parseInt(doge.temperature.celsius,10),
             interval,
             colour_class;
         
@@ -50,10 +51,10 @@ $('.geo').bind('click', function(e) {
             'class',
             'dw' + doge.id + ' bg'
         );
-        $('#description').text('wow ' + doge.description);
-        $('#location').text(doge.location);
-        $('#celsius').text(Math.round(doge.temperature.celsius) + '°C');
-        $('#fahrenheit').text(Math.round(doge.temperature.fahrenheit) + '°F');
+        $('.description').text('wow ' + doge.description);
+        $('.location').text(doge.location);
+        $('.celsius').text(Math.round(doge.temperature.c) + '°C');
+        $('.fahrenheit').text(Math.round(doge.temperature.f) + '°F');
         
         body.append('<div class="such overlay" />').children('.such.overlay');
      
