@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Such Weather</title>
+        <title>such weather</title>
         <meta name="description" content="much weather wow temperature" />
-        <meta name="author" content="Katia + Bennett" />
+        <meta name="author" content="original: katia + bennett // this fork: antom" />
         <link rel="shortcut icon" href="./img/doge/favicon.png" type="image/png" />
         <meta name="viewport" content="width=700" />
         <link rel="stylesheet" type="text/css" href="/very.css" />
