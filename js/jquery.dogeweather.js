@@ -13,16 +13,20 @@ $('.geo').bind('click', function(e) {
         clearInterval(window.doge_interval);
         delete window.doge_interval;
     } else if (btn.text() == 'very location') {
+        btn.text('so finding…');
+        
         if (navigator.geolocation) {
-            btn.text('so finding…');
             navigator.geolocation.getCurrentPosition(function(position) {
                 $.getJSON('./api?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude,function(data) {
                     $($.doge(data));
                     btn.text('wow, located!').addClass('c08');
-                }); 
+                });
             });
         } else {
-            btn.text('so unsupported. much sadness.');
+            $.getJSON('./api',function(data) {
+                $($.doge(data));
+                btn.text('wow, located!').addClass('c08');
+            });
         }
     }
 
@@ -91,7 +95,7 @@ $('.geo').bind('click', function(e) {
             }
 
             if (rs == 2) {
-                title.text(r(s));
+                document.title = r(s);
             }
         },2500);
     };
