@@ -2,11 +2,16 @@ $('.geo').bind('click', function(e) {
     var btn = $(this);
     
     if (btn.text() == 'wow, located!') {
+        $('body').attr('class','dw00e');
+        $('title').text('such weather');
         btn.removeClass('c08').text('very location');
+        $('.description').text('');
+        $('.location').text('');
+        $('.celsius').text('');
+        $('.fahrenheit').text('');
+        $('.such span').remove();
         clearInterval(window.doge_interval);
         delete window.doge_interval;
-        $('.such span').remove();
-        $('title').text('such weather');
     } else if (btn.text() == 'very location') {
         if (navigator.geolocation) {
             btn.text('so finding…');
