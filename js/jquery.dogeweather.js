@@ -11,7 +11,7 @@ $('.geo').bind('click', function(e) {
         if (navigator.geolocation) {
             btn.text('so finding…');
             navigator.geolocation.getCurrentPosition(function(position) {
-                $.getJSON('./?json&lat=' + position.coords.latitude + '&lon=' + position.coords.longitude,function(data) {
+                $.getJSON('./api?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude,function(data) {
                     $($.doge(data));
                     btn.text('wow, located!').addClass('c08');
                 }); 

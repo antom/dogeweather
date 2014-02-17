@@ -46,10 +46,8 @@ color:#33d6ff;
 color:#ff3399;
 }
 
-.celsius,
-.fahrenheit {
+.temperature {
 color:#30ffd6;
-display:inline-block;
 }
 
 .suchlikes {

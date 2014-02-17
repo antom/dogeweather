@@ -1,5 +1,9 @@
 <?php
 
+function get_url() {
+  return rtrim(preg_replace('/\?.*/','',$_SERVER['REQUEST_URI']), '/');
+}
+
 // much detection attempt. very client ip address.
 function get_ip() {
   switch(true) {
