@@ -40,8 +40,8 @@ function call_api($url,$decode = 1) {
       CURLOPT_HTTPGET        => 1,
       CURLOPT_RETURNTRANSFER => 1,
       CURLOPT_FOLLOWLOCATION => 1,
-      )
-    );
+    )
+  );
 
   $request = curl_exec($ch);
 
@@ -72,11 +72,27 @@ function get_weather($decode = 1) {
       )
     : get_geo_by_ip();
 
-  $api_query = ($geo && isset($geo->lat) && isset($geo->lon))
-    ? 'lat=' . $geo->lat . '&lon=' . $geo->lon
-    : 'q=Paris';
+  if ($weather_api_key = getenv('WEATHER_API_KEY')) {
+    $api_query = array(
+      'APPID' => $weather_api_key,
+    );
+  } else {
+    trigger_error('Such Weather API key. Very unset.');
+  }
 
-  return call_api('http://api.openweathermap.org/data/2.5/weather?' . $api_query,$decode);
+  if ($geo && isset($geo->lat) && isset($geo->lon)) {
+    $api_query = array_merge(
+      $api_query,
+      array(
+        'lat' => $geo->lat,
+        'lon' => $geo->lon
+      )
+    );
+  } else {
+    $api_query['q'] = 'Paris';
+  }
+
+  return call_api('http://api.openweathermap.org/data/2.5/weather?' . http_build_query($api_query),$decode);
 }
 
 // much return array. very listing of tings. so based on celsius.
